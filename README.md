@@ -10,9 +10,17 @@ Be sure to check out the [GoXLR Utility](https://github.com/GoXLR-on-Linux/goxlr
 
 ## Installation
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=timmo001&repository=homeassistant-integration-goxlr-utility&category=integration)
+> The original repository (timmo001/homeassistant-integration-goxlr-utility) is archived and was removed from the HACS default store. This copy is maintained to keep it installable.
 
-This integration is available in the [Home Assistant Community Store](https://hacs.xyz/).
+### HACS (custom repository)
+
+1. Push this repository to your own GitHub account.
+2. In Home Assistant: HACS → ⋮ → Custom repositories → add your repository URL, category **Integration**.
+3. Download "GoXLR Utility" and restart Home Assistant.
+
+### Manual
+
+Copy `custom_components/goxlr_utility` into your Home Assistant `config/custom_components/` folder (e.g. with the Samba share or File editor/SSH add-on) and restart Home Assistant.
 
 ## Setup and Configuration
 

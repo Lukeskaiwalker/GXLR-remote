@@ -1,10 +1,10 @@
 """Helper for GoXLR Utility integration."""
 from __future__ import annotations
 
+import asyncio
 import logging
 from typing import Any
 
-import async_timeout
 from goxlrutilityapi.websocket_client import WebsocketClient
 
 from homeassistant.core import HomeAssistant
@@ -21,7 +21,7 @@ async def setup_connection(
     data: dict[str, Any],
 ) -> WebsocketClient:
     """Set up connection to GoXLR Utility."""
-    async with async_timeout.timeout(10):
+    async with asyncio.timeout(10):
         websocket_client = WebsocketClient()
         try:
             await websocket_client.connect(

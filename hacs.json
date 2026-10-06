@@ -1,6 +1,5 @@
 {
   "name": "GoXLR Utility",
   "render_readme": true,
-  "zip_release": true,
-  "filename": "goxlr_utility.zip"
+  "homeassistant": "2025.2.0"
 }

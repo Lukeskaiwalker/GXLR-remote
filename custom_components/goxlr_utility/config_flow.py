@@ -10,10 +10,9 @@ from goxlrutilityapi.helpers import get_mixer_from_status
 from goxlrutilityapi.websocket_client import WebsocketClient
 import voluptuous as vol
 
-from homeassistant import config_entries
+from homeassistant.config_entries import ConfigFlow as BaseConfigFlow, ConfigFlowResult
 from homeassistant.const import CONF_HOST, CONF_PORT
 from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult
 
 from .const import CONNECTION_ERRORS, DOMAIN
 from .helper import CannotConnect, setup_connection
@@ -69,7 +68,7 @@ async def validate_input(
     }
 
 
-class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+class ConfigFlow(BaseConfigFlow, domain=DOMAIN):
     """Handle a config flow for GoXLR Utility."""
 
     VERSION = 1
@@ -77,7 +76,7 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     async def async_step_user(
         self,
         user_input: dict[str, Any] | None = None,
-    ) -> FlowResult:
+    ) -> ConfigFlowResult:
         """Handle the initial step."""
         errors: dict[str, str] = {}
         if user_input is not None:
@@ -90,6 +89,7 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 errors["base"] = "unknown"
             else:
                 await self.async_set_unique_id(info["identifier"])
+                self._abort_if_unique_id_configured()
                 return self.async_create_entry(
                     title=info["title"],
                     data=user_input,

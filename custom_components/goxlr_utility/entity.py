@@ -9,7 +9,7 @@ from homeassistant.components.light import LightEntityDescription
 from homeassistant.components.media_player import MediaPlayerEntityDescription
 from homeassistant.components.sensor import SensorEntityDescription
 from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.helpers.entity import DeviceInfo
+from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.typing import UndefinedType
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
@@ -79,7 +79,7 @@ class GoXLRUtilityEntity(CoordinatorEntity[GoXLRUtilityDataUpdateCoordinator]):
         )
 
 
-@dataclass
+@dataclass(frozen=True, kw_only=True)
 class GoXLRUtilityBinarySensorEntityDescription(BinarySensorEntityDescription):
     """Class describing GoXLR Utility binary sensor entities."""
 
@@ -87,7 +87,7 @@ class GoXLRUtilityBinarySensorEntityDescription(BinarySensorEntityDescription):
     item_key: str | None = None
 
 
-@dataclass
+@dataclass(frozen=True, kw_only=True)
 class GoXLRUtilityLightEntityDescription(LightEntityDescription):
     """Class describing GoXLR Utility light entities."""
 
@@ -95,7 +95,7 @@ class GoXLRUtilityLightEntityDescription(LightEntityDescription):
     item_key: str = ""
 
 
-@dataclass
+@dataclass(frozen=True, kw_only=True)
 class GoXLRUtilityMediaPlayerEntityDescription(MediaPlayerEntityDescription):
     """Class describing GoXLR Utility media player entities."""
 
@@ -106,7 +106,7 @@ class GoXLRUtilityMediaPlayerEntityDescription(MediaPlayerEntityDescription):
     set_volume_fn: Callable = round
 
 
-@dataclass
+@dataclass(frozen=True, kw_only=True)
 class GoXLRUtilitySensorEntityDescription(SensorEntityDescription):
     """Class describing GoXLR Utility sensor entities."""
 
