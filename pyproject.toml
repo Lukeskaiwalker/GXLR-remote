@@ -6,9 +6,9 @@ authors = ["Aidan Timson <aidan@timmo.dev>"]
 maintainers = ["Aidan Timson <aidan@timmo.dev>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/timmo001/homeassistant-integration-goxlr-utility"
-repository = "https://github.com/timmo001/homeassistant-integration-goxlr-utility"
-documentation = "https://github.com/timmo001/homeassistant-integration-goxlr-utility"
+homepage = "https://github.com/Lukeskaiwalker/GXLR-remote"
+repository = "https://github.com/Lukeskaiwalker/GXLR-remote"
+documentation = "https://github.com/Lukeskaiwalker/GXLR-remote"
 classifiers = [
   "Framework :: AsyncIO",
   "Natural Language :: English",
@@ -31,8 +31,8 @@ pre-commit-hooks = "4.4.0"
 pylint = "2.17.3"
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/timmo001/homeassistant-integration-goxlr-utility/issues"
-Changelog = "https://github.com/timmo001/homeassistant-integration-goxlr-utility/releases"
+"Bug Tracker" = "https://github.com/Lukeskaiwalker/GXLR-remote/issues"
+Changelog = "https://github.com/Lukeskaiwalker/GXLR-remote/releases"
 
 [build-system]
 requires = ["poetry-core"]

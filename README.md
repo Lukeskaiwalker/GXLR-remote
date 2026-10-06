@@ -1,4 +1,4 @@
-# Home Assistant Integration - GoXLR Utility
+# GXLR-remote - GoXLR Utility for Home Assistant
 
 [GoXLR Utility](https://github.com/GoXLR-on-Linux/goxlr-utility) integration for [Home Assistant](https://www.home-assistant.io/) using the [goxlrutilityapi](https://github.com/timmo001/goxlr-utility-api-py) Python package. This is a third party application from [@GoXLR-on-Linux](https://github.com/GoXLR-on-Linux) that allows for control of the GoXLR on Linux, Mac and Windows.
 
@@ -10,13 +10,13 @@ Be sure to check out the [GoXLR Utility](https://github.com/GoXLR-on-Linux/goxlr
 
 ## Installation
 
-> The original repository (timmo001/homeassistant-integration-goxlr-utility) is archived and was removed from the HACS default store. This copy is maintained to keep it installable.
+> Based on [timmo001/homeassistant-integration-goxlr-utility](https://github.com/timmo001/homeassistant-integration-goxlr-utility), which is archived and was removed from the HACS default store.
 
 ### HACS (custom repository)
 
-1. Push this repository to your own GitHub account.
-2. In Home Assistant: HACS → ⋮ → Custom repositories → add your repository URL, category **Integration**.
-3. Download "GoXLR Utility" and restart Home Assistant.
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Lukeskaiwalker&repository=GXLR-remote&category=integration)
+
+Or in Home Assistant: HACS → ⋮ → Custom repositories → add `https://github.com/Lukeskaiwalker/GXLR-remote` with category **Integration**, then download "GoXLR Utility" and restart Home Assistant.
 
 ### Manual
 
