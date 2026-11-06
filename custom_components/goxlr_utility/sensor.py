@@ -42,6 +42,17 @@ async def async_setup_entry(
         ),
     ]
 
+    # The GoXLR Mini has no sampler
+    if coordinator.data.sampler is not None:
+        sensor_descriptions.append(
+            GoXLRUtilitySensorEntityDescription(
+                key="sampler_bank",
+                name="Sampler bank",
+                icon="mdi:layers-triple",
+                value=lambda data: data.sampler.get("active_bank"),
+            )
+        )
+
     entities = [
         GoXLRUtilitySensor(
             coordinator,

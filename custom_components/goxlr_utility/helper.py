@@ -5,12 +5,11 @@ import asyncio
 import logging
 from typing import Any
 
-from goxlrutilityapi.websocket_client import WebsocketClient
-
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
+from .client import GoXLRClient
 from .const import CONNECTION_ERRORS
 from .models import register_models
 
@@ -20,11 +19,11 @@ _LOGGER = logging.getLogger(__name__)
 async def setup_connection(
     hass: HomeAssistant,
     data: dict[str, Any],
-) -> WebsocketClient:
+) -> GoXLRClient:
     """Set up connection to GoXLR Utility."""
     register_models()
     async with asyncio.timeout(10):
-        websocket_client = WebsocketClient()
+        websocket_client = GoXLRClient()
         try:
             await websocket_client.connect(
                 data["host"],
@@ -32,7 +31,7 @@ async def setup_connection(
                 async_get_clientsession(hass),
             )
         except CONNECTION_ERRORS as exception:
-            _LOGGER.warning("Connection error: %s", exception)
+            _LOGGER.debug("Connection error: %s", exception)
             raise CannotConnect from exception
 
         return websocket_client

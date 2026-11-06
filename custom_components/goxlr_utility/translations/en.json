@@ -15,5 +15,25 @@
                 }
             }
         }
+    },
+    "services": {
+        "set_fader_label": {
+            "name": "Set fader label",
+            "description": "Sets the text and icon on a fader's display (full-size GoXLR only).",
+            "fields": {
+                "fader": {
+                    "name": "Fader",
+                    "description": "The fader, from left to right: A, B, C or D."
+                },
+                "text": {
+                    "name": "Text",
+                    "description": "The text, about 11 characters fit. Leave it out to keep the current text."
+                },
+                "icon": {
+                    "name": "Icon",
+                    "description": "An icon file from GoXLR Utility's icons folder. Leave it out to keep the current icon, or empty to remove it."
+                }
+            }
+        }
     }
 }

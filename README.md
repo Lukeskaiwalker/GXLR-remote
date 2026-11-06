@@ -40,9 +40,18 @@ Slider control (volume, muted)
 ### Sensors
 
 - Profile
+- Sampler bank (A, B or C)
 
 ### Lights
 
 - Accent
 - Buttons (Inactive, Active)
 - Faders (Bottom, Top)
+
+### Actions
+
+- `goxlr_utility.set_fader_label`: sets the text and icon on a fader's display (full-size GoXLR only). The icon is a file from GoXLR Utility's icons folder, and about 11 characters of text fit.
+
+## Fader pages
+
+The GoXLR has no fader pages, but you can build them with automations: use the Sampler bank sensor as the page, `media_player.volume_set` to move a motorized fader to the value it should show, and `goxlr_utility.set_fader_label` to relabel it. Use channels that carry no sound, because the channel's volume follows the fader.

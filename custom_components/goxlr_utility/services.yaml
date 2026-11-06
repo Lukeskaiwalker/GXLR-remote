@@ -1,0 +1,20 @@
+set_fader_label:
+  fields:
+    fader:
+      required: true
+      example: C
+      selector:
+        select:
+          options:
+            - A
+            - B
+            - C
+            - D
+    text:
+      example: Desk Lights
+      selector:
+        text:
+    icon:
+      example: lightbulb2.png
+      selector:
+        text:
